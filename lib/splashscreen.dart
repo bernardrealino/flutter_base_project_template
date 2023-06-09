@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_splashscreen/intro_screens/intro_page1.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+import 'intro_screens/intro_page2.dart';
+import 'intro_screens/intro_page3.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -9,7 +13,7 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  PageController _controller = PageController();
+  final PageController _controller = PageController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,20 +21,14 @@ class _SplashScreenState extends State<SplashScreen> {
         children: [
           PageView(
             controller: _controller,
-            children: [
-              Container(
-                color: Colors.blue,
-              ),
-              Container(
-                color: Colors.green,
-              ),
-              Container(
-                color: Colors.yellow,
-              ),
+            children: const [
+              IntroPage1(),
+              IntroPage2(),
+              IntroPage3(),
             ],
           ),
           Container(
-            alignment: Alignment(0, 0.75),
+            alignment: const Alignment(0, 0.75),
             child: SmoothPageIndicator(
               controller: _controller,
               count: 3,
