@@ -14,6 +14,8 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   final PageController _controller = PageController();
+  bool _onLastPage = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,6 +23,11 @@ class _SplashScreenState extends State<SplashScreen> {
         children: [
           PageView(
             controller: _controller,
+            onPageChanged: (index) {
+              setState(() {
+                _onLastPage = (index == 2);
+              });
+            },
             children: const [
               IntroPage1(),
               IntroPage2(),
@@ -46,13 +53,23 @@ class _SplashScreenState extends State<SplashScreen> {
                 ),
 
                 //Next
-                GestureDetector(
-                    onTap: () {
-                      _controller.nextPage(
-                          duration: Duration(milliseconds: 500),
-                          curve: Curves.easeIn);
-                    },
-                    child: Text("Next")),
+                _onLastPage
+                    ? GestureDetector(
+                        onTap: () {
+                          _controller.nextPage(
+                              duration: Duration(milliseconds: 500),
+                              curve: Curves.easeIn);
+                        },
+                        child: Text("Done"),
+                      )
+                    : GestureDetector(
+                        onTap: () {
+                          _controller.nextPage(
+                              duration: Duration(milliseconds: 500),
+                              curve: Curves.easeIn);
+                        },
+                        child: Text("Next"),
+                      ),
               ],
             ),
           )
