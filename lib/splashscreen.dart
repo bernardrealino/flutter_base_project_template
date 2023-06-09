@@ -29,9 +29,31 @@ class _SplashScreenState extends State<SplashScreen> {
           ),
           Container(
             alignment: const Alignment(0, 0.75),
-            child: SmoothPageIndicator(
-              controller: _controller,
-              count: 3,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                //skip
+                GestureDetector(
+                  onTap: () {
+                    _controller.jumpToPage(2);
+                  },
+                  child: Text("Skip"),
+                ),
+                //Page Indicator
+                SmoothPageIndicator(
+                  controller: _controller,
+                  count: 3,
+                ),
+
+                //Next
+                GestureDetector(
+                    onTap: () {
+                      _controller.nextPage(
+                          duration: Duration(milliseconds: 500),
+                          curve: Curves.easeIn);
+                    },
+                    child: Text("Next")),
+              ],
             ),
           )
         ],
