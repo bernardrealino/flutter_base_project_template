@@ -49,6 +49,15 @@ class _SplashScreenState extends State<SplashScreen> {
                 ),
                 //Page Indicator
                 SmoothPageIndicator(
+                  effect: SlideEffect(
+                      spacing: 8.0,
+                      radius: 4.0,
+                      dotWidth: 24.0,
+                      dotHeight: 16.0,
+                      paintStyle: PaintingStyle.stroke,
+                      strokeWidth: 1.5,
+                      dotColor: Colors.grey,
+                      activeDotColor: Colors.greenAccent),
                   controller: _controller,
                   count: 3,
                 ),

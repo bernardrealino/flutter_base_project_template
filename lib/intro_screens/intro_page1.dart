@@ -7,9 +7,17 @@ class IntroPage1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         // Lottie.asset('assets/bouncy-slime.zip'),
+        // Image.asset('assets/Astrology with Tarot cards and crystal ball.png'),
+        Text(
+          "Welcome!",
+          style: TextStyle(
+            fontSize: 40,
+          ),
+        ),
+        Lottie.asset('assets/146441-bouncy-slime-animation.json'),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
