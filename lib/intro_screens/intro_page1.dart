@@ -12,7 +12,7 @@ class IntroPage1 extends StatelessWidget {
         // Lottie.asset('assets/bouncy-slime.zip'),
         // Image.asset('assets/Astrology with Tarot cards and crystal ball.png'),
         Text(
-          "Welcome!",
+          "WELCOME",
           style: TextStyle(
             fontSize: 40,
           ),
