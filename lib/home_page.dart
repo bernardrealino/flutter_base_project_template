@@ -19,7 +19,11 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.greenAccent[100],
         foregroundColor: Colors.black,
         iconTheme: IconThemeData(color: Colors.greenAccent[100]),
-        title: Text("Homepage"),
+        title: Text("Dashboard"),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
       ),
       body: Center(
           child: currentIndex == 0
@@ -61,16 +65,17 @@ class _HomePageState extends State<HomePage> {
                     });
                   },
                   child: _isClicked
-                      ? Image.asset('images/Background.jpeg')
+                      ? Image.asset(
+                          'assets/Astrology with Tarot cards and crystal ball.png')
                       : Image.network(
                           "https://imgv3.fotor.com/images/blog-cover-image/part-blurry-image.jpg"),
                 )),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(
-            label: "Home",
+            label: "Dashboard",
             icon: Icon(
-              Icons.home,
+              Icons.dashboard,
             ),
           ),
           BottomNavigationBarItem(
