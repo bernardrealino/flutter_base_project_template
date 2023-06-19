@@ -19,12 +19,19 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.greenAccent[100],
         foregroundColor: Colors.black,
         iconTheme: IconThemeData(color: Colors.greenAccent[100]),
-        title: Text("Dashboard"),
+        title: Text("Homepage"),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.add),
-      ),
+      floatingActionButton: currentIndex == 0
+          ? FloatingActionButton(
+              onPressed: () {
+                setState(() {
+                  currentIndex = 1;
+                });
+              },
+              child: Icon(
+                Icons.add,
+              ))
+          : Container(),
       body: Center(
           child: currentIndex == 0
               ? Container(
@@ -95,3 +102,5 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
+addItem() {}
