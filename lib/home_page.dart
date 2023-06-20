@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_splashscreen/dashboard.dart';
+import 'package:flutter_splashscreen/dashboard_page.dart';
 import './setting_page.dart';
 
 class HomePage extends StatefulWidget {
