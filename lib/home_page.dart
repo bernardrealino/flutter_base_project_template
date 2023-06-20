@@ -11,8 +11,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
-  bool _isClicked = true;
   bool isVisible = true;
+  String appBarTitle = "Dashboard";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,33 +20,22 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.greenAccent[100],
         foregroundColor: Colors.black,
         iconTheme: IconThemeData(color: Colors.greenAccent[100]),
-        title: const Text("Homepage"),
+        title: Text(appBarTitle),
       ),
       floatingActionButton: Visibility(
         visible: isVisible,
         child: FloatingActionButton(
-            onPressed: () {
-              setState(() {});
-            },
-            child: const Icon(
-              Icons.add,
-            )),
+          onPressed: () {
+            setState(() {});
+          },
+          child: const Icon(
+            Icons.add,
+          ),
+        ),
       ),
       body: Center(
-          child: currentIndex == 0
-              ? const DashboardPage()
-              : GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      _isClicked = !_isClicked;
-                    });
-                  },
-                  child: _isClicked
-                      ? Image.asset(
-                          'assets/Astrology with Tarot cards and crystal ball.png')
-                      : Image.network(
-                          "https://imgv3.fotor.com/images/blog-cover-image/part-blurry-image.jpg"),
-                )),
+        child: currentIndex == 0 ? const DashboardPage() : const SettingPage(),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(
@@ -66,7 +55,13 @@ class _HomePageState extends State<HomePage> {
         onTap: (int index) {
           setState(() {
             currentIndex = index;
-            currentIndex == 0 ? isVisible = true : isVisible = false;
+            if (currentIndex == 0) {
+              isVisible = true;
+              appBarTitle = "Dashboard";
+            } else {
+              isVisible = false;
+              appBarTitle = "Setting";
+            }
           });
         },
       ),

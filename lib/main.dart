@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-// import 'home_page.dart';
-import 'splashscreen.dart';
+import 'home_page.dart';
+// import 'splashscreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: SplashScreen(),
-      // home: HomePage(),
+      // home: SplashScreen(),
+      home: HomePage(),
     );
   }
 }

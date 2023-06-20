@@ -10,10 +10,10 @@ class SettingPage extends StatefulWidget {
 class _SettingPageState extends State<SettingPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Setting Page"),
-      ),
+    return Container(
+      width: double.infinity,
+      height: double.infinity,
+      child: Row(),
     );
   }
 }
