@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_splashscreen/dashboard_page.dart';
-import './setting_page.dart';
+// import './setting_page.dart';
+import 'imagepicker_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -31,7 +32,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: Center(
-        child: currentIndex == 0 ? const DashboardPage() : const SettingPage(),
+        child: currentIndex == 0 ? const DashboardPage() : ImagePickerPage(),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
@@ -42,9 +43,9 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           BottomNavigationBarItem(
-            label: "Setting",
+            label: "Image",
             icon: Icon(
-              Icons.settings,
+              Icons.image,
             ),
           ),
         ],
@@ -57,7 +58,7 @@ class _HomePageState extends State<HomePage> {
               appBarTitle = "Dashboard";
             } else {
               isVisible = false;
-              appBarTitle = "Setting";
+              appBarTitle = "Image";
             }
           });
         },
