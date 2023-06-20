@@ -12,6 +12,7 @@ class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
   bool _isClicked = true;
   String buttonName = "CLICK";
+  bool isVisible = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,17 +22,16 @@ class _HomePageState extends State<HomePage> {
         iconTheme: IconThemeData(color: Colors.greenAccent[100]),
         title: Text("Homepage"),
       ),
-      floatingActionButton: currentIndex == 0
-          ? FloatingActionButton(
-              onPressed: () {
-                setState(() {
-                  currentIndex = 1;
-                });
-              },
-              child: Icon(
-                Icons.add,
-              ))
-          : Container(),
+      floatingActionButton: Visibility(
+        visible: isVisible,
+        child: FloatingActionButton(
+            onPressed: () {
+              setState(() {});
+            },
+            child: const Icon(
+              Icons.add,
+            )),
+      ),
       body: Center(
           child: currentIndex == 0
               ? Container(
@@ -96,6 +96,7 @@ class _HomePageState extends State<HomePage> {
         onTap: (int index) {
           setState(() {
             currentIndex = index;
+            currentIndex == 0 ? isVisible = true : isVisible = false;
           });
         },
       ),
