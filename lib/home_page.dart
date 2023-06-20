@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_splashscreen/dashboard.dart';
 import './setting_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,7 +12,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
   bool _isClicked = true;
-  String buttonName = "CLICK";
   bool isVisible = true;
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.greenAccent[100],
         foregroundColor: Colors.black,
         iconTheme: IconThemeData(color: Colors.greenAccent[100]),
-        title: Text("Homepage"),
+        title: const Text("Homepage"),
       ),
       floatingActionButton: Visibility(
         visible: isVisible,
@@ -34,37 +34,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Center(
           child: currentIndex == 0
-              ? Container(
-                  width: double.infinity,
-                  height: double.infinity,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              // onPrimary: Colors.red,
-                              // primary: Colors.amber,
-                              ),
-                          onPressed: () {
-                            setState(() {
-                              buttonName = "Clicked";
-                            });
-                          },
-                          child: Text(buttonName)),
-                      ElevatedButton(
-                          onPressed: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (BuildContext context) =>
-                                    const SettingPage(),
-                              ),
-                            );
-                          },
-                          child: Text("Move to Next Page")),
-                    ],
-                  ),
-                )
+              ? const DashboardPage()
               : GestureDetector(
                   onTap: () {
                     setState(() {
