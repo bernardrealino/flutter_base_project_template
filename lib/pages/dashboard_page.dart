@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_splashscreen/pages/home_page.dart';
+import 'package:flutter_splashscreen/pages/cart_page.dart';
+import 'package:flutter_splashscreen/pages/inbox_page.dart';
 import 'package:flutter_splashscreen/pages/profile_page.dart';
 import 'package:flutter_splashscreen/pages/setting_page.dart';
-import 'package:flutter_splashscreen/splashscreen.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -16,7 +16,7 @@ class _DashboardPageState extends State<DashboardPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: GridView.count(
           crossAxisCount: 2,
           crossAxisSpacing: 16.0,
@@ -24,7 +24,7 @@ class _DashboardPageState extends State<DashboardPage> {
           children: [
             _buildCard('Profile', Icons.person, 0),
             _buildCard('Shopping Cart', Icons.shopping_cart, 1),
-            _buildCard('Messages', Icons.mail, 2),
+            _buildCard('Inbox', Icons.mail, 2),
             _buildCard('Setting', Icons.settings, 3),
           ],
         ),
@@ -40,19 +40,19 @@ class _DashboardPageState extends State<DashboardPage> {
           if (onTapValue == 0) {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (BuildContext context) => ProfilePage(),
+                builder: (BuildContext context) => const ProfilePage(),
               ),
             );
           } else if (onTapValue == 1) {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (BuildContext context) => const HomePage(),
+                builder: (BuildContext context) => const CartPage(),
               ),
             );
           } else if (onTapValue == 2) {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (BuildContext context) => SplashScreen(),
+                builder: (BuildContext context) => InboxPage(),
               ),
             );
           } else if (onTapValue == 3) {
@@ -73,7 +73,7 @@ class _DashboardPageState extends State<DashboardPage> {
             SizedBox(height: 8.0),
             Text(
               title,
-              style: TextStyle(fontSize: 16.0),
+              style: const TextStyle(fontSize: 16.0),
             ),
           ],
         ),
