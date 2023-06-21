@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_splashscreen/intro_screens/intro_page1.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import 'home_page.dart';
+import 'pages/home_page.dart';
 import 'intro_screens/intro_page2.dart';
 import 'intro_screens/intro_page3.dart';
 
