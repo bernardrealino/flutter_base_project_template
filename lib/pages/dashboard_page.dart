@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_splashscreen/pages/home_page.dart';
+import 'package:flutter_splashscreen/pages/setting_page.dart';
+import 'package:flutter_splashscreen/splashscreen.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -18,22 +21,46 @@ class _DashboardPageState extends State<DashboardPage> {
           crossAxisSpacing: 16.0,
           mainAxisSpacing: 16.0,
           children: [
-            _buildCard('Profile', Icons.person),
-            _buildCard('Shopping Cart', Icons.shopping_cart),
-            _buildCard('Messages', Icons.mail),
-            _buildCard('Setting', Icons.settings),
+            _buildCard('Profile', Icons.person, 0),
+            _buildCard('Shopping Cart', Icons.shopping_cart, 1),
+            _buildCard('Messages', Icons.mail, 2),
+            _buildCard('Setting', Icons.settings, 3),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildCard(String title, IconData icon) {
+  Widget _buildCard(String title, IconData icon, int onTapValue) {
     return Card(
       elevation: 2.0,
       child: InkWell(
         onTap: () {
-          // Handle card tap
+          if (onTapValue == 0) {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (BuildContext context) => const SettingPage(),
+              ),
+            );
+          } else if (onTapValue == 1) {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (BuildContext context) => const HomePage(),
+              ),
+            );
+          } else if (onTapValue == 2) {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (BuildContext context) => SplashScreen(),
+              ),
+            );
+          } else if (onTapValue == 3) {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (BuildContext context) => const SettingPage(),
+              ),
+            );
+          }
         },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
