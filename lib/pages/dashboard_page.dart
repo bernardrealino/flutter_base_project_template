@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_splashscreen/pages/home_page.dart';
+import 'package:flutter_splashscreen/pages/profile_page.dart';
 import 'package:flutter_splashscreen/pages/setting_page.dart';
 import 'package:flutter_splashscreen/splashscreen.dart';
 
@@ -39,7 +40,7 @@ class _DashboardPageState extends State<DashboardPage> {
           if (onTapValue == 0) {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (BuildContext context) => const SettingPage(),
+                builder: (BuildContext context) => ProfilePage(),
               ),
             );
           } else if (onTapValue == 1) {
