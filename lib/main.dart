@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_splashscreen/splashscreen.dart';
+// ignore: unused_import
+import 'package:flutter_splashscreen/pages/home_page.dart';
+import 'package:flutter_splashscreen/intro_screen.dart';
+// import 'package:flutter_splashscreen/splashscreen.dart';
 // import 'pages/home_page.dart';
-// import 'splashscreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: SplashScreen(),
+      home: IntroScreen(),
       // home: HomePage(),
     );
   }

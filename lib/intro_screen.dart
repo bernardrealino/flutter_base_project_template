@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_splashscreen/intro_screens/intro_page1.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import 'pages/home_page.dart';
+import 'intro_screens/intro_page1.dart';
 import 'intro_screens/intro_page2.dart';
 import 'intro_screens/intro_page3.dart';
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+class IntroScreen extends StatefulWidget {
+  const IntroScreen({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  State<IntroScreen> createState() => _IntroScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _IntroScreenState extends State<IntroScreen> {
   final PageController _controller = PageController();
   bool _onLastPage = false;
 
@@ -49,7 +49,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 ),
                 //Page Indicator
                 SmoothPageIndicator(
-                  effect: SlideEffect(
+                  effect: const SlideEffect(
                       spacing: 8.0,
                       radius: 4.0,
                       dotWidth: 24.0,
