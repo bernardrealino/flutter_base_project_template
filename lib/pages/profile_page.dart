@@ -9,7 +9,7 @@ class ProfilePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Profile'),
       ),
-      body: Center(
+      body: const Center(
         child: Card(
           margin: EdgeInsets.all(20),
           child: Padding(

@@ -4,6 +4,8 @@ import 'package:flutter_splashscreen/pages/inbox_page.dart';
 import 'package:flutter_splashscreen/pages/profile_page.dart';
 import 'package:flutter_splashscreen/pages/setting_page.dart';
 
+import 'movie_page.dart';
+
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
 
@@ -26,6 +28,7 @@ class _DashboardPageState extends State<DashboardPage> {
             _buildCard('Shopping Cart', Icons.shopping_cart, 1),
             _buildCard('Inbox', Icons.mail, 2),
             _buildCard('Setting', Icons.settings, 3),
+            _buildCard('Movie', Icons.movie, 4),
           ],
         ),
       ),
@@ -59,6 +62,12 @@ class _DashboardPageState extends State<DashboardPage> {
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (BuildContext context) => const SettingPage(),
+              ),
+            );
+          } else if (onTapValue == 4) {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (BuildContext context) => const MoviePage(),
               ),
             );
           }

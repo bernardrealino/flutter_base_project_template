@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_splashscreen/splashscreen.dart';
-// import 'pages/home_page.dart';
+import 'package:flutter_splashscreen/pages/movie_page.dart';
+// import 'package:flutter_splashscreen/splashscreen.dart';
+import 'pages/home_page.dart';
 // import 'splashscreen.dart';
 
 void main() {
@@ -21,8 +22,9 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: SplashScreen(),
+      // home: SplashScreen(),
       // home: HomePage(),
+      home: MoviePage(),
     );
   }
 }

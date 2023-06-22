@@ -1,0 +1,214 @@
+{
+  "movies": [
+    {
+      "index": 1,
+      "title": "The Shawshank Redemption",
+      "year": 1994,
+      "genre": "Drama",
+      "director": "Frank Darabont",
+      "actors": ["Tim Robbins", "Morgan Freeman", "Bob Gunton"],
+      "rating": 9.3,
+      "cover_image": "https://example.com/shawshank_redemption.jpg"
+    },
+    {
+      "index": 2,
+      "title": "The Godfather",
+      "year": 1972,
+      "genre": "Crime",
+      "director": "Francis Ford Coppola",
+      "actors": ["Marlon Brando", "Al Pacino", "James Caan"],
+      "rating": 9.2,
+      "cover_image": "https://example.com/the_godfather.jpg"
+    },
+    {
+      "index": 3,
+      "title": "Pulp Fiction",
+      "year": 1994,
+      "genre": "Crime",
+      "director": "Quentin Tarantino",
+      "actors": ["John Travolta", "Samuel L. Jackson", "Uma Thurman"],
+      "rating": 8.9,
+      "cover_image": "https://example.com/pulp_fiction.jpg"
+    },
+    {
+      "index": 4,
+      "title": "The Dark Knight",
+      "year": 2008,
+      "genre": "Action",
+      "director": "Christopher Nolan",
+      "actors": ["Christian Bale", "Heath Ledger", "Aaron Eckhart"],
+      "rating": 9.0,
+      "cover_image": "https://example.com/the_dark_knight.jpg"
+    },
+    {
+      "index": 5,
+      "title": "Inception",
+      "year": 2010,
+      "genre": "Sci-Fi",
+      "director": "Christopher Nolan",
+      "actors": ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Ellen Page"],
+      "rating": 8.8,
+      "cover_image": "https://example.com/inception.jpg"
+    },
+    {
+      "index": 6,
+      "title": "Fight Club",
+      "year": 1999,
+      "genre": "Drama",
+      "director": "David Fincher",
+      "actors": ["Brad Pitt", "Edward Norton", "Helena Bonham Carter"],
+      "rating": 8.8,
+      "cover_image": "https://example.com/fight_club.jpg"
+    },
+    {
+      "index": 7,
+      "title": "The Matrix",
+      "year": 1999,
+      "genre": "Sci-Fi",
+      "director": "Lana Wachowski, Lilly Wachowski",
+      "actors": ["Keanu Reeves", "Laurence Fishburne", "Carrie-Anne Moss"],
+      "rating": 8.7,
+      "cover_image": "https://example.com/the_matrix.jpg"
+    },
+    {
+      "index": 8,
+      "title": "Goodfellas",
+      "year": 1990,
+      "genre": "Crime",
+      "director": "Martin Scorsese",
+      "actors": ["Robert De Niro", "Ray Liotta", "Joe Pesci"],
+      "rating": 8.7,
+      "cover_image": "https://example.com/goodfellas.jpg"
+    },
+    {
+      "index": 9,
+      "title": "Schindler's List",
+      "year": 1993,
+      "genre": "Drama",
+      "director": "Steven Spielberg",
+      "actors": ["Liam Neeson", "Ralph Fiennes", "Ben Kingsley"],
+      "rating": 8.9,
+      "cover_image": "https://example.com/schindlers_list.jpg"
+    },
+    {
+      "index": 10,
+      "title": "The Lord of the Rings: The Return of the King",
+      "year": 2003,
+      "genre": "Fantasy",
+      "director": "Peter Jackson",
+      "actors": ["Elijah Wood", "Viggo Mortensen", "Ian McKellen"],
+      "rating": 8.9,
+      "cover_image": "https://example.com/lotr_return_of_the_king.jpg"
+    },
+    {
+      "index": 11,
+      "title": "Forrest Gump",
+      "year": 1994,
+      "genre": "Drama",
+      "director": "Robert Zemeckis",
+      "actors": ["Tom Hanks", "Robin Wright", "Gary Sinise"],
+      "rating": 8.8,
+      "cover_image": "https://example.com/forrest_gump.jpg"
+    },
+    {
+      "index": 12,
+      "title": "The Empire Strikes Back",
+      "year": 1980,
+      "genre": "Sci-Fi",
+      "director": "Irvin Kershner",
+      "actors": ["Mark Hamill", "Harrison Ford", "Carrie Fisher"],
+      "rating": 8.7,
+      "cover_image": "https://example.com/empire_strikes_back.jpg"
+    },
+    {
+      "index": 13,
+      "title": "The Silence of the Lambs",
+      "year": 1991,
+      "genre": "Thriller",
+      "director": "Jonathan Demme",
+      "actors": ["Jodie Foster", "Anthony Hopkins", "Scott Glenn"],
+      "rating": 8.6,
+      "cover_image": "https://example.com/silence_of_the_lambs.jpg"
+    },
+    {
+      "index": 14,
+      "title": "Seven",
+      "year": 1995,
+      "genre": "Crime",
+      "director": "David Fincher",
+      "actors": ["Brad Pitt", "Morgan Freeman", "Gwyneth Paltrow"],
+      "rating": 8.6,
+      "cover_image": "https://example.com/seven.jpg"
+    },
+    {
+      "index": 15,
+      "title": "Gladiator",
+      "year": 2000,
+      "genre": "Action",
+      "director": "Ridley Scott",
+      "actors": ["Russell Crowe", "Joaquin Phoenix", "Connie Nielsen"],
+      "rating": 8.5,
+      "cover_image": "https://example.com/gladiator.jpg"
+    },
+    {
+      "index": 16,
+      "title": "The Green Mile",
+      "year": 1999,
+      "genre": "Drama",
+      "director": "Frank Darabont",
+      "actors": ["Tom Hanks", "Michael Clarke Duncan", "David Morse"],
+      "rating": 8.6,
+      "cover_image": "https://example.com/green_mile.jpg"
+    },
+    {
+      "index": 17,
+      "title": "Interstellar",
+      "year": 2014,
+      "genre": "Sci-Fi",
+      "director": "Christopher Nolan",
+      "actors": ["Matthew McConaughey", "Anne Hathaway", "Jessica Chastain"],
+      "rating": 8.6,
+      "cover_image": "https://example.com/interstellar.jpg"
+    },
+    {
+      "index": 18,
+      "title": "The Departed",
+      "year": 2006,
+      "genre": "Crime",
+      "director": "Martin Scorsese",
+      "actors": ["Leonardo DiCaprio", "Matt Damon", "Jack Nicholson"],
+      "rating": 8.5,
+      "cover_image": "https://example.com/the_departed.jpg"
+    },
+    {
+      "index": 19,
+      "title": "The Prestige",
+      "year": 2006,
+      "genre": "Drama",
+      "director": "Christopher Nolan",
+      "actors": ["Christian Bale", "Hugh Jackman", "Scarlett Johansson"],
+      "rating": 8.5,
+      "cover_image": "https://example.com/the_prestige.jpg"
+    },
+    {
+      "index": 20,
+      "title": "The Lion King",
+      "year": 1994,
+      "genre": "Animation",
+      "director": "Roger Allers, Rob Minkoff",
+      "actors": ["Matthew Broderick", "Jeremy Irons", "James Earl Jones"],
+      "rating": 8.5,
+      "cover_image": "https://example.com/the_lion_king.jpg"
+    },
+    {
+      "index": 21,
+      "title": "The Avengers",
+      "year": 2012,
+      "genre": "Action",
+      "director": "Joss Whedon",
+      "actors": ["Robert Downey Jr.", "Chris Evans", "Scarlett Johansson"],
+      "rating": 8.0,
+      "cover_image": "https://example.com/the_avengers.jpg"
+    }
+  ]
+}

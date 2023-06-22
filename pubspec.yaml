@@ -39,6 +39,7 @@ dependencies:
   smooth_page_indicator: ^1.1.0
   image_picker: ^0.8.9
   permission_handler: ^10.3.0
+  http: ^1.0.0
 
 
 dev_dependencies:
@@ -66,6 +67,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
+    - assets/movies.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
