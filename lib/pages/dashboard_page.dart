@@ -24,53 +24,27 @@ class _DashboardPageState extends State<DashboardPage> {
           crossAxisSpacing: 16.0,
           mainAxisSpacing: 16.0,
           children: [
-            _buildCard('Profile', Icons.person, 0),
-            _buildCard('Shopping Cart', Icons.shopping_cart, 1),
-            _buildCard('Inbox', Icons.mail, 2),
-            _buildCard('Setting', Icons.settings, 3),
-            _buildCard('Movie', Icons.movie, 4),
+            _buildCard('Profile', Icons.person, const ProfilePage()),
+            _buildCard('Shopping Cart', Icons.shopping_cart, const CartPage()),
+            _buildCard('Inbox', Icons.mail, InboxPage()),
+            _buildCard('Setting', Icons.settings, const SettingPage()),
+            _buildCard('Movie', Icons.movie, const MoviePage()),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildCard(String title, IconData icon, int onTapValue) {
+  Widget _buildCard(String title, IconData icon, page) {
     return Card(
       elevation: 2.0,
       child: InkWell(
         onTap: () {
-          if (onTapValue == 0) {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (BuildContext context) => const ProfilePage(),
-              ),
-            );
-          } else if (onTapValue == 1) {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (BuildContext context) => const CartPage(),
-              ),
-            );
-          } else if (onTapValue == 2) {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (BuildContext context) => InboxPage(),
-              ),
-            );
-          } else if (onTapValue == 3) {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (BuildContext context) => const SettingPage(),
-              ),
-            );
-          } else if (onTapValue == 4) {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (BuildContext context) => const MoviePage(),
-              ),
-            );
-          }
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (BuildContext context) => page,
+            ),
+          );
         },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
