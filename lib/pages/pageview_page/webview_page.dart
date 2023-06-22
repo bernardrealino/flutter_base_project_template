@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base_project_template/pages/web_view_stack.dart';
+import 'package:flutter_base_project_template/pages/pageview_page/web_view_stack.dart';
 import 'package:webview_flutter/webview_flutter.dart'; // ADD
 
 import 'navigation_controls.dart';
