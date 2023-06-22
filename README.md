@@ -1,4 +1,4 @@
-# flutter_splashscreen
+# flutter_base_project_template
 
 A new Flutter project.
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_splashscreen/pages/cart_page.dart';
-import 'package:flutter_splashscreen/pages/inbox_page.dart';
-import 'package:flutter_splashscreen/pages/profile_page.dart';
-import 'package:flutter_splashscreen/pages/setting_page.dart';
+import 'package:flutter_base_project_template/pages/cart_page.dart';
+import 'package:flutter_base_project_template/pages/inbox_page.dart';
+import 'package:flutter_base_project_template/pages/profile_page.dart';
+import 'package:flutter_base_project_template/pages/setting_page.dart';
 
 import 'movie_page.dart';
 

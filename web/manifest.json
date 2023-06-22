@@ -1,6 +1,6 @@
 {
-    "name": "flutter_splashscreen",
-    "short_name": "flutter_splashscreen",
+    "name": "flutter_base_project_template",
+    "short_name": "flutter_base_project_template",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

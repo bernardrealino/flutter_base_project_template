@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 // ignore: unused_import
-import 'package:flutter_splashscreen/pages/home_page.dart';
-import 'package:flutter_splashscreen/intro_screen.dart';
-// import 'package:flutter_splashscreen/splashscreen.dart';
+import 'package:flutter_base_project_template/pages/home_page.dart';
+import 'package:flutter_base_project_template/intro_screen.dart';
+// import 'package:flutter_base_project_template/splashscreen.dart';
 // import 'pages/home_page.dart';
 
 void main() {

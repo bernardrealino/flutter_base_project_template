@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_splashscreen/pages/dashboard_page.dart';
+import 'package:flutter_base_project_template/pages/dashboard_page.dart';
 // import './setting_page.dart';
 import 'imagepicker_page.dart';
 
