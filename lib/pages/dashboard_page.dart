@@ -3,6 +3,7 @@ import 'package:flutter_base_project_template/pages/cart_page.dart';
 import 'package:flutter_base_project_template/pages/inbox_page.dart';
 import 'package:flutter_base_project_template/pages/profile_page.dart';
 import 'package:flutter_base_project_template/pages/setting_page.dart';
+import 'package:flutter_base_project_template/pages/webview_page.dart';
 
 import 'movie_page.dart';
 
@@ -29,6 +30,7 @@ class _DashboardPageState extends State<DashboardPage> {
             _buildCard('Inbox', Icons.mail, InboxPage()),
             _buildCard('Setting', Icons.settings, const SettingPage()),
             _buildCard('Movie', Icons.movie, const MoviePage()),
+            _buildCard('Web', Icons.web, const WebViewApp()),
           ],
         ),
       ),
