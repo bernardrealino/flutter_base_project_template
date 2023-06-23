@@ -71,8 +71,9 @@ flutter:
   assets:
     - assets/
     - assets/movies.json
+    - assets/www/assets/sounds/
     - assets/www/index.html
-    - assets/www/styles/style.css
+    - assets/www/style.css
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
