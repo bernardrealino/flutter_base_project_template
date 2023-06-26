@@ -16,13 +16,13 @@ class _SettingPageState extends State<SettingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Settings'),
+        title: const Text('Settings'),
       ),
       body: ListView(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         children: [
           SwitchListTile(
-            title: Text('Enable Notifications'),
+            title: const Text('Enable Notifications'),
             value: _notificationEnabled,
             onChanged: (bool value) {
               setState(() {
@@ -31,7 +31,7 @@ class _SettingPageState extends State<SettingPage> {
             },
           ),
           SwitchListTile(
-            title: Text('Dark Mode'),
+            title: const Text('Dark Mode'),
             value: _darkModeEnabled,
             onChanged: (bool value) {
               setState(() {
@@ -40,7 +40,7 @@ class _SettingPageState extends State<SettingPage> {
             },
           ),
           ListTile(
-            title: Text('Slider Value'),
+            title: const Text('Slider Value'),
             subtitle: Slider(
               value: _sliderValue,
               onChanged: (double value) {
@@ -50,13 +50,13 @@ class _SettingPageState extends State<SettingPage> {
               },
             ),
           ),
-          SizedBox(height: 16.0),
+          const SizedBox(height: 16.0),
           ElevatedButton(
             onPressed: () {
               // Save settings or perform any other action
               // you want when the user taps the button
             },
-            child: Text('Save'),
+            child: const Text('Save'),
           ),
         ],
       ),

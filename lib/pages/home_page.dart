@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {
               showSearch(context: context, delegate: CustomSearchDelegate());
             },
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
           ),
         ],
       ),
@@ -40,7 +40,8 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: Center(
-        child: currentIndex == 0 ? const DashboardPage() : ImagePickerPage(),
+        child:
+            currentIndex == 0 ? const DashboardPage() : const ImagePickerPage(),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
@@ -107,7 +108,7 @@ class CustomSearchDelegate extends SearchDelegate {
         onPressed: () {
           close(context, null);
         },
-        icon: Icon(Icons.arrow_back));
+        icon: const Icon(Icons.arrow_back));
   }
 
   @override
