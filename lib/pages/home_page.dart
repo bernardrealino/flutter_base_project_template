@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base_project_template/pages/dashboard_page.dart';
+import 'package:flutter_base_project_template/pages/setting_page.dart';
 // import './setting_page.dart';
 import 'imagepicker_page.dart';
 
@@ -11,9 +12,21 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _selectedIndex = 0;
   int currentIndex = 0;
   bool isVisible = true;
   String appBarTitle = "Dashboard";
+  static final List<Widget> _widgetOptions = <Widget>[
+    const DashboardPage(),
+    const ImagePickerPage(),
+    const SettingPage(),
+  ];
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,38 +52,24 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      body: Center(
-        child:
-            currentIndex == 0 ? const DashboardPage() : const ImagePickerPage(),
-      ),
+      body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
-        items: const [
+        items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             label: "Dashboard",
-            icon: Icon(
-              Icons.dashboard,
-            ),
+            icon: Icon(Icons.dashboard),
           ),
           BottomNavigationBarItem(
             label: "Image",
-            icon: Icon(
-              Icons.image,
-            ),
+            icon: Icon(Icons.image),
+          ),
+          BottomNavigationBarItem(
+            label: "Setting",
+            icon: Icon(Icons.settings),
           ),
         ],
-        currentIndex: currentIndex,
-        onTap: (int index) {
-          setState(() {
-            currentIndex = index;
-            if (currentIndex == 0) {
-              isVisible = true;
-              appBarTitle = "Dashboard";
-            } else {
-              isVisible = false;
-              appBarTitle = "Image";
-            }
-          });
-        },
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
       ),
     );
   }
