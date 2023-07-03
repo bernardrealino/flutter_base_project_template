@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base_project_template/pages/dashboard_page.dart';
+import 'package:flutter_base_project_template/pages/inbox_page.dart';
 import 'package:flutter_base_project_template/pages/setting_page.dart';
 // import './setting_page.dart';
-import 'imagepicker_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   String appBarTitle = "Dashboard";
   static final List<Widget> _widgetOptions = <Widget>[
     const DashboardPage(),
-    const ImagePickerPage(),
+    InboxPage(),
     const SettingPage(),
   ];
   void _onItemTapped(int index) {
@@ -60,8 +60,8 @@ class _HomePageState extends State<HomePage> {
             icon: Icon(Icons.dashboard),
           ),
           BottomNavigationBarItem(
-            label: "Image",
-            icon: Icon(Icons.image),
+            label: "Inbox",
+            icon: Icon(Icons.mail),
           ),
           BottomNavigationBarItem(
             label: "Setting",

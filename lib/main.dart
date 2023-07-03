@@ -7,7 +7,7 @@ import 'package:flutter_base_project_template/intro_screen.dart';
 // import 'pages/home_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -24,8 +24,8 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: IntroScreen(),
-      // home: HomePage(),
+      // home: IntroScreen(),
+      home: const HomePage(),
     );
   }
 }
