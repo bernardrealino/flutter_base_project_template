@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base_project_template/navigation/sidebar.dart';
 import 'package:flutter_base_project_template/pages/dashboard_page.dart';
 import 'package:flutter_base_project_template/pages/inbox_page.dart';
 import 'package:flutter_base_project_template/pages/setting_page.dart';
@@ -30,6 +31,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const SidebarMenu(),
       appBar: AppBar(
         title: Text(appBarTitle),
         actions: [
