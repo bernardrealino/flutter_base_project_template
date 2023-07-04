@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base_project_template/pages/bluetooth_page.dart';
-import 'package:flutter_base_project_template/pages/cart_page.dart';
 import 'package:flutter_base_project_template/pages/imagepicker_page.dart';
-import 'package:flutter_base_project_template/pages/pageview_page/webview_page.dart';
-
-import 'movie_page.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -25,13 +21,13 @@ class _DashboardPageState extends State<DashboardPage> {
           mainAxisSpacing: 16.0,
           children: [
             // _buildCard('Profile', Icons.person, const ProfilePage()),
-            _buildCard('Shopping Cart', Icons.shopping_cart, const CartPage()),
+            // _buildCard('Shopping Cart', Icons.shopping_cart, const CartPage()),
             // _buildCard('Inbox', Icons.mail, InboxPage()),
             // _buildCard('Setting', Icons.settings, const SettingPage()),
-            _buildCard('Image', Icons.image, const ImagePickerPage()),
-            _buildCard('Movie', Icons.movie, const MoviePage()),
-            _buildCard('Web', Icons.web, const WebViewApp()),
             _buildCard('Bluetooth', Icons.bluetooth, const BluetoothPage()),
+            _buildCard('Image', Icons.image, const ImagePickerPage()),
+            // _buildCard('Movie', Icons.movie, const MoviePage()),
+            // _buildCard('Web', Icons.web, const WebViewApp()),
           ],
         ),
       ),

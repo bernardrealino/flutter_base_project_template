@@ -25,35 +25,23 @@ class _ImagePickerPageState extends State<ImagePickerPage> {
         child: Column(
           children: [
             Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(
-                    top: 15,
-                    left: 25,
-                  ),
-                  child: IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: const Icon(Icons.download_rounded),
-                  ),
-                ),
-              ],
-            ),
-            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                IconButton(
-                    onPressed: () async {
-                      pickedFile = picker
-                          .getImage(source: ImageSource.camera)
-                          .whenComplete(() => setState(() {}));
-                    },
-                    icon: const Icon(Icons.add)),
-                const SizedBox(
-                  width: 100,
+                ElevatedButton(
+                  onPressed: () async {
+                    pickedFile = picker
+                        .getImage(source: ImageSource.camera)
+                        .whenComplete(() => setState(() {}));
+                  },
+                  child: const Row(
+                    children: [
+                      Icon(Icons.add),
+                      SizedBox(width: 10),
+                      Text("Add From Camera"),
+                    ],
+                  ),
                 ),
-                IconButton(
+                ElevatedButton(
                   onPressed: () async {
                     pickedFile = picker
                         .getImage(
@@ -61,10 +49,17 @@ class _ImagePickerPageState extends State<ImagePickerPage> {
                         )
                         .whenComplete(() => setState(() {}));
                   },
-                  icon: const Icon(Icons.photo_camera_back),
+                  child: const Row(
+                    children: [
+                      Icon(Icons.photo_camera_back),
+                      SizedBox(width: 10),
+                      Text("Open from Gallery"),
+                    ],
+                  ),
                 ),
               ],
             ),
+            const Divider(),
             FutureBuilder<PickedFile?>(
               future: pickedFile,
               builder: (context, snap) {
@@ -79,9 +74,27 @@ class _ImagePickerPageState extends State<ImagePickerPage> {
                 }
                 return Container(
                   height: 200.0,
-                  color: Colors.blue,
+                  width: double.infinity,
+                  color: Colors.grey,
+                  child: const Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.image,
+                      ),
+                      Text("Select Image to Show"),
+                    ],
+                  ),
                 );
               },
+            ),
+            const Divider(),
+            ElevatedButton(
+              onPressed: () {
+                //Convert Image Logic Here
+              },
+              child: const Text("Press to Convert"),
             ),
           ],
         ),
