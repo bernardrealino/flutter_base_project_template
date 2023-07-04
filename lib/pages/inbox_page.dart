@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class InboxPage extends StatefulWidget {
+  const InboxPage({super.key});
+
   @override
   _InboxPageState createState() => _InboxPageState();
 }
@@ -17,9 +19,6 @@ class _InboxPageState extends State<InboxPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Inbox'),
-      ),
       body: ListView.builder(
         itemCount: messages.length,
         itemBuilder: (context, index) {
@@ -36,7 +35,7 @@ class _InboxPageState extends State<InboxPage> {
 }
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     home: InboxPage(),
   ));
 }
