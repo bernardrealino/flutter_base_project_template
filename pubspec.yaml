@@ -46,6 +46,7 @@ dependencies:
   video_player: ^2.6.1
   flutter_launcher_icons: ^0.13.1
   flutter_scan_bluetooth: ^2.1.4
+  image: ^4.0.17
 
 flutter_launcher_icons:
   android: true

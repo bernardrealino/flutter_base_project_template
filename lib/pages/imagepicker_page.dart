@@ -13,6 +13,8 @@ class ImagePickerPage extends StatefulWidget {
 class _ImagePickerPageState extends State<ImagePickerPage> {
   final picker = ImagePicker();
   late Future<PickedFile?> pickedFile = Future.value(null);
+  String imageToDither = "";
+  bool _imageVisible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -63,14 +65,22 @@ class _ImagePickerPageState extends State<ImagePickerPage> {
             FutureBuilder<PickedFile?>(
               future: pickedFile,
               builder: (context, snap) {
-                if (snap.hasData) {
-                  return Container(
-                    color: Colors.blue,
-                    child: Image.file(
-                      File(snap.data!.path),
-                      fit: BoxFit.contain,
-                    ),
-                  );
+                try {
+                  if (snap.hasData) {
+                    // print(snap.data!.path);
+                    imageToDither = snap.data!.path;
+                    // print(imageToDither);
+                    return Container(
+                      height: 200,
+                      color: Colors.white,
+                      child: Image.file(
+                        File(snap.data!.path),
+                        fit: BoxFit.contain,
+                      ),
+                    );
+                  }
+                } catch (e) {
+                  print("File is too large");
                 }
                 return Container(
                   height: 200.0,
@@ -93,8 +103,21 @@ class _ImagePickerPageState extends State<ImagePickerPage> {
             ElevatedButton(
               onPressed: () {
                 //Convert Image Logic Here
+                setState(() {
+                  _imageVisible = true;
+                });
+                print("Convert Image");
               },
               child: const Text("Press to Convert"),
+            ),
+            SizedBox(
+              height: 200.0,
+              width: 200.0,
+              child: imageToDither != ""
+                  ? _imageVisible
+                      ? Image.file(File(imageToDither))
+                      : Container()
+                  : Container(),
             ),
           ],
         ),
