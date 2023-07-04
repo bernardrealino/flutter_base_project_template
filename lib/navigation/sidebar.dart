@@ -33,7 +33,7 @@ class _SidebarMenuState extends State<SidebarMenu> {
             ),
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage(
+                image: AssetImage(
                   backgroundPicture,
                 ),
                 fit: BoxFit.cover,
