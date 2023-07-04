@@ -16,15 +16,21 @@ class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
   int currentIndex = 0;
   bool isVisible = true;
-  String appBarTitle = "Dashboard";
+  String appBarTitle = "";
   static final List<Widget> _widgetOptions = <Widget>[
     const DashboardPage(),
-    InboxPage(),
+    const InboxPage(),
     const SettingPage(),
+  ];
+  static final List<String> _textOptions = <String>[
+    "Dashboard",
+    "Inbox",
+    "Setting",
   ];
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      _selectedIndex != 0 ? isVisible = false : isVisible = true;
     });
   }
 
@@ -33,11 +39,14 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       drawer: const SidebarMenu(),
       appBar: AppBar(
-        title: Text(appBarTitle),
+        title: Text(_textOptions.elementAt(_selectedIndex)),
         actions: [
           IconButton(
             onPressed: () {
-              showSearch(context: context, delegate: CustomSearchDelegate());
+              showSearch(
+                context: context,
+                delegate: CustomSearchDelegate(),
+              );
             },
             icon: const Icon(Icons.search),
           ),

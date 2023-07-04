@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base_project_template/pages/bluetooth_page.dart';
 import 'package:flutter_base_project_template/pages/cart_page.dart';
 import 'package:flutter_base_project_template/pages/imagepicker_page.dart';
 import 'package:flutter_base_project_template/pages/pageview_page/webview_page.dart';
@@ -30,6 +31,7 @@ class _DashboardPageState extends State<DashboardPage> {
             _buildCard('Image', Icons.image, const ImagePickerPage()),
             _buildCard('Movie', Icons.movie, const MoviePage()),
             _buildCard('Web', Icons.web, const WebViewApp()),
+            _buildCard('Bluetooth', Icons.bluetooth, const BluetoothPage()),
           ],
         ),
       ),
