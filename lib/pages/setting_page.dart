@@ -27,6 +27,14 @@ class _SettingPageState extends State<SettingPage> {
               });
             },
           ),
+          ElevatedButton(
+            onPressed: () {
+              if (_notificationEnabled) {}
+              // Save settings or perform any other action
+              // you want when the user taps the button
+            },
+            child: const Text('Test Notification'),
+          ),
           SwitchListTile(
             title: const Text('Dark Mode'),
             value: _darkModeEnabled,

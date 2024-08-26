@@ -20,7 +20,7 @@ class BluetoothPageState extends State<BluetoothPage> {
 
     _bluetooth.devices.listen((device) {
       setState(() {
-        _data += device.name + ' (${device.address})\n';
+        _data += '${device.name} (${device.address})\n';
       });
     });
     _bluetooth.scanStopped.listen((device) {
@@ -33,58 +33,69 @@ class BluetoothPageState extends State<BluetoothPage> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Expanded(child: Text(_data)),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Center(
-                child: ElevatedButton(
-                    child: Text(_scanning ? 'Stop scan' : 'Start scan'),
-                    onPressed: () async {
-                      try {
-                        if (_scanning) {
-                          await _bluetooth.stopScan();
-                          debugPrint("scanning stoped");
-                          setState(() {
-                            _data = '';
-                          });
-                        } else {
-                          await _bluetooth.startScan(pairedDevices: false);
-                          debugPrint("scanning started");
-                          setState(() {
-                            _scanning = true;
-                          });
-                        }
-                      } on PlatformException catch (e) {
-                        debugPrint(e.toString());
-                      }
-                    }),
-              ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Bluetooth'),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          Expanded(
+            child: ListView.builder(
+              itemCount: _data.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text(_data),
+                  onTap: () {
+                    // Open the message or perform an action
+                    print(_data);
+                  },
+                );
+              },
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Center(
-                child: ElevatedButton(
-                    child: const Text('Check permissions'),
-                    onPressed: () async {
-                      try {
-                        await _bluetooth.requestPermissions();
-                        print('All good with perms');
-                      } on PlatformException catch (e) {
-                        debugPrint(e.toString());
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Center(
+              child: ElevatedButton(
+                  child: Text(_scanning ? 'Stop scan' : 'Start scan'),
+                  onPressed: () async {
+                    try {
+                      if (_scanning) {
+                        await _bluetooth.stopScan();
+                        debugPrint("scanning stoped");
+                        setState(() {
+                          _data = '';
+                        });
+                      } else {
+                        await _bluetooth.startScan(pairedDevices: false);
+                        debugPrint("scanning started");
+                        setState(() {
+                          _scanning = true;
+                        });
                       }
-                    }),
-              ),
-            )
-          ],
-        ),
+                    } on PlatformException catch (e) {
+                      debugPrint(e.toString());
+                    }
+                  }),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Center(
+              child: ElevatedButton(
+                  child: const Text('Check permissions'),
+                  onPressed: () async {
+                    try {
+                      await _bluetooth.requestPermissions();
+                      print('All good with perms');
+                    } on PlatformException catch (e) {
+                      debugPrint(e.toString());
+                    }
+                  }),
+            ),
+          )
+        ],
       ),
     );
   }
